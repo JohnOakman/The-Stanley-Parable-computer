@@ -132,7 +132,7 @@ net.Receive("stanley_parable_job_avertissement", function(_len, ply)
 end)
 -----------------------------------------------------
 net.Receive("stanley_parable_add_health", function(_len,ply)
-	ply:SetHealth(ply:Health()+1)
+	ply:SetHealth(ply:Health()+GetConVarNumber("the_stanley_parable_job_health_get"))
 end)
 
 	function the_stanley_parable_job(ply)	
@@ -157,3 +157,4 @@ concommand.Add("the_stanley_parable_job", the_stanley_parable_job)
 CreateConVar("the_stanley_parable_job_health", 1, configcvar, "When you enter the good letter, you win 1HP (0/1).")
 CreateConVar("the_stanley_parable_job_language", "ENG", configcvar , "Change the language of 'The Stanley Parable Job' addon (ENG, FR) (You will need to reboot).")
 CreateConVar("the_stanley_parable_job_death", 1, configcvar, "Kill the guy when he fail 3 times (0/1).")
+CreateConVar("the_stanley_parable_job_health_get", 1, configcvar, "Change the Health you get when you win.")
